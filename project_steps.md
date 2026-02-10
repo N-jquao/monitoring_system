@@ -1,7 +1,7 @@
 ## I Created an Automated Monitoring Infrastructure and Alerting System
 
 ```bash
-#The first step of the project was to create a droplet server on DigitalOcean
+1. The first step of the project was to create a droplet server on DigitalOcean
 #This would allow me to create a virtual machine with enough ram and ssd space to deploy the complete Wazuh SIEM tool
 #Memory: 4GB
 #Computing power: 2 Intel vCPUs
