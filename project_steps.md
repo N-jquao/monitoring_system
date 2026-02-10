@@ -20,6 +20,7 @@ sudo bash ./wazuh-install.sh -a
 #I had to look in the Wazuh Dashboard config file for the IP address: /etc/wazuh-dashboard/opensearch_dashboards.yml
 
 
+2. The next step was to deploy the Wazuh Agent on the endpoint I wanted to monitor
 
 
 
