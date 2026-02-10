@@ -12,8 +12,10 @@
 #I then logged into the droplet server via PuTTY
 
 #The next step was to install Wazuh on the droplet server
+
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
 sudo bash ./wazuh-install.sh -a
+
 #This installed the Wazuh Indexer, Wazuh Server, and Wazuh Dashboard on the droplet server
 
 #I was then able to access the Wazuh web interface via https://<WAZUH_DASHBOARD_IP_ADDRESS> using the login details provided when the installation completed
