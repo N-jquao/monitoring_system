@@ -32,6 +32,12 @@ sudo systemctl restart wazuh-agent
 
 4. To test the configuration I created a text file in the /tmp dir called redflag.txt, then waited 5 seconds
 
+```bash
+cd /tmp
+
+sudo touch redflag.txt
+```
+
 <img width="369" height="81" alt="image" src="https://github.com/user-attachments/assets/2df14992-0061-4a3d-9880-d9fa6fc33f51" />
 <br>
 <br>
@@ -43,4 +49,22 @@ sudo systemctl restart wazuh-agent
 <br>
 <br>
 
-5. 
+5. I then added content to the file and saved it
+
+```bash
+cd /tmp
+
+sudo vi redflag.txt
+
+#Added this to the file and saved
+ "This is an attack from an intruder"
+```
+
+<img width="952" height="478" alt="image" src="https://github.com/user-attachments/assets/c2ed0df8-6215-4b99-b5ee-57812a9e0fc6" />
+
+<img width="944" height="491" alt="image" src="https://github.com/user-attachments/assets/788ab0eb-bfc1-4bb9-9201-46cc4fa62b38" />
+
+<br>
+
+- To visualize the alerts I needed to add the following filters to the events section of File Integrity Monitoring
+--> rule.id: is one of 550,553,554
