@@ -113,6 +113,16 @@ sudo systemctl restart wazuh-manager
 sudo curl http://<UBUNTU WEBSERVER_IP>
 ```
 
+<img width="860" height="100" alt="rhel_attacker_curl" src="https://github.com/user-attachments/assets/5ea16255-1e8c-4b20-8505-01b5fbcd2127" />
+
+- The RHEL-Attacker endpoint connected to the Ubuntu wazuh-agent's web server the first time
+- After the first connection, the Wazuh Active Response module temporarily blocked any successive connection to the web servers for 600 seconds (10 minutes, as I specified in the config file)
+
+
+<img width="944" height="418" alt="threat_hunting" src="https://github.com/user-attachments/assets/9038ba8c-19d0-43f5-820e-bc6fb620dfa5" />
+
+
+<br>
 
 
 
