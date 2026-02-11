@@ -37,6 +37,7 @@ curl http://<UBUNTU_ENDPOINT_IP>
 5. I then added the following to /var/ossec/etc/ossec.conf file to configure the Wazuh agent and monitor the Apache access logs
 
 ```bash
+#Add this to the file and save
 <localfile>
   <log_format>syslog</log_format>
   <location>/var/log/apache2/access.log</location>
