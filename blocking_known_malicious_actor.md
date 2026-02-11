@@ -95,6 +95,7 @@ sudo chown wazuh:wazuh /var/ossec/etc/lists/blacklist-alienvault
 8. Added the Active Response block to the Wazuh server /var/ossec/etc/ossec.conf file
 
 - For the Ubuntu endpoint, the firewall-drop command integrates with the Ubuntu local iptables firewall and drops incoming network connection from the attacker endpoint for 10 minutes (so you have time to investigate)
+- The timeout amount should be 600 instead of 60
 
 <img width="400" height="194" alt="Screenshot 2026-02-11 102333" src="https://github.com/user-attachments/assets/beff77b0-7571-495c-8a13-2ec0c5382980" />
 
