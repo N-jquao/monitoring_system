@@ -45,3 +45,29 @@ curl http://<UBUNTU_ENDPOINT_IP>
 
 sudo systemctl restart wazuh-agent
 ```
+<br>
+
+6. I then needed to perform the following steps on the Wazuh server to add the IP address of the RHEL endpoint to a CDB list, and configure rules and active response
+
+```bash
+sudo apt update
+
+sudo apt install -y wget
+
+sudo wget https://iplists.firehol.org/files/alienvault_reputation.ipset -O /var/ossec/etc/lists/alienvault_reputation.ipset
+
+#Add the RHEL Attacker server's IP to the end of this file and save
+sudo vi /var/ossec/etc/lists/alienvault_reputation.ipset
+
+#Downloaded this script to convert from the .ipset format to the .cdb list format
+sudo wget https://wazuh.com/resources/iplist-to-cdblist.py -O /tmp/iplist-to-cdblist.py
+
+#Converted the alienvault_reputation.ipset file to a .cdb format using the previously downloaded script
+sudo /var/ossec/framework/python/bin/python3 /tmp/iplist-to-cdblist.py /var/ossec/etc/lists/alienvault_reputation.ipset /var/ossec/etc/lists/blacklist-alienvault
+
+#Assigned the correct permissions and ownership to the generated file
+sudo chown wazuh:wazuh /var/ossec/etc/lists/blacklist-alienvault
+```
+<br>
+
+7. 
