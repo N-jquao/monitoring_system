@@ -23,7 +23,19 @@ sudo bash ./wazuh-install.sh -a
 
 
 2. The next step was to deploy the Wazuh Agent on the endpoint I wanted to monitor
+- The Wazuh agent runs on the endpoint you want to monitor and communicates with the Wazuh manager
+- With root privileges I ran the following commands
 
+```bash
+sudo apt-get install gnupg apt-transport-https
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH
+gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import
+chmod 644 /usr/share/keyrings/wazuh.gpg
+sudo vi /etc/apt/sources.list.d/wazuh.list
+#Add the following repository to the end of the file
+"deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main"
+sudo apt-get update
+```
 
 
 
