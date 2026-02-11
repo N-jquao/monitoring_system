@@ -10,7 +10,7 @@
 - Attackers can create files in /tmp with expected names before legitimate programs do, tricking the system into using their malicious file
  <br>
  
-2. Edited the Wazuh agent vm's /var/ossec/etc/ossec.conf configuration file. Then I added the directory for monitoring within the <syscheck> block
+2. I Edited the Wazuh agent vm's /var/ossec/etc/ossec.conf configuration file. Then I added the directory for monitoring within the <syscheck> block
 
 ```bash
 #Added the /tmp directory line to the bottom of this config file and saved
@@ -20,4 +20,11 @@ sudo vi /var/ossec/etc/ossec.conf
 ```
 <br>
 
-3. 
+3. I then restarted the Wazuh agent to apply the configuration changes
+
+```bash
+sudo systemctl restart wazuh-agent
+```
+
+- As an alternative to local configurations on the Wazuh agents, it is possible to centrally configure groups of agents
+
