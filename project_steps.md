@@ -23,6 +23,7 @@ sudo bash ./wazuh-install.sh -a
 
 <br>
 2. The next step was to deploy the Wazuh Agent on the endpoint I wanted to monitor
+
 - The Wazuh agent runs on the endpoint you want to monitor and communicates with the Wazuh manager
 - With root privileges I ran the following commands
 
@@ -44,9 +45,33 @@ sudo apt-get update
 ```
 
 <br>
-3. I then ran the following command, replacing the **WAZUH-MANAGER** value with my Wazuh-manager's IP address
-```bash
+3. I then ran the following command, replacing the WAZUH-MANAGER value with my Wazuh-manager's IP address
 
+```bash
+WAZUH_MANAGER="<Wazuh-manager IP address>" sudo apt-get install wazuh-agent
 ```
 
+<br>
+4. I then enabled and started the Wazuh agent service
+
+```bash
+sudo systemctl daemon-reload
+
+sudo systemctl enable wazuh-agent
+
+sudo systemctl start wazuh-agent
+```
+
+<br>
+5. I then disabled Wazuh updates
+
+- Compatibility between the Wazuh agent and the Wazuh manager is only guaranteed when the Wazuh manager version is later than or equal to that of the Wazuh agent
+- It is good practice to disable the Wazuh repository to prevent accidental upgrades
+
+```bash
+#I set the package state to **hold**
+#This stopped updates but meant I am still able to upgrade it manually using **apt-get install**
+
+sudo echo "wazuh-agent hold" | dpkg --set-selections
+```
 
