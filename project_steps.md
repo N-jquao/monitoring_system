@@ -21,7 +21,7 @@ sudo bash ./wazuh-install.sh -a
 - I was then able to access the Wazuh web interface via **https://<WAZUH_DASHBOARD_IP_ADDRESS>** using the login details provided when the installation completed
 - I had to look in the Wazuh Dashboard config file for the IP address: **/etc/wazuh-dashboard/opensearch_dashboards.yml**
 
-
+<br>
 2. The next step was to deploy the Wazuh Agent on the endpoint I wanted to monitor
 - The Wazuh agent runs on the endpoint you want to monitor and communicates with the Wazuh manager
 - With root privileges I ran the following commands
@@ -29,21 +29,24 @@ sudo bash ./wazuh-install.sh -a
 ```bash
 sudo apt-get install gnupg apt-transport-https
 
-curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH
+sudo curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH
 
-gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import
+sudo gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import
 
-chmod 644 /usr/share/keyrings/wazuh.gpg
+sudo chmod 644 /usr/share/keyrings/wazuh.gpg
 
 sudo vi /etc/apt/sources.list.d/wazuh.list
 
-#Add the following repository to the end of the file
+#Add the following repository to the end of the file  and save
 "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main"
 
 sudo apt-get update
 ```
 
+<br>
+3. I then ran the following command, replacing the **WAZUH-MANAGER** value with my Wazuh-manager's IP address
+```bash
 
-
+```
 
 
