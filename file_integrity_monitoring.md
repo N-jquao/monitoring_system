@@ -62,6 +62,8 @@ sudo vi redflag.txt
 
 <img width="952" height="478" alt="image" src="https://github.com/user-attachments/assets/c2ed0df8-6215-4b99-b5ee-57812a9e0fc6" />
 
+<br>
+
 <img width="944" height="491" alt="image" src="https://github.com/user-attachments/assets/788ab0eb-bfc1-4bb9-9201-46cc4fa62b38" />
 
 <br>
