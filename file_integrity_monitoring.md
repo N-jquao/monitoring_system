@@ -71,5 +71,5 @@ sudo vi redflag.txt
 <br>
 
 - To visualize the alerts I needed to add the following filters to the events section of File Integrity Monitoring
-<br>
+
 --> rule.id: is one of 550,553,554
