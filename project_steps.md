@@ -13,6 +13,7 @@
 
 ```bash
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
+
 sudo bash ./wazuh-install.sh -a
 ```
 
@@ -27,12 +28,18 @@ sudo bash ./wazuh-install.sh -a
 
 ```bash
 sudo apt-get install gnupg apt-transport-https
+
 curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH
+
 gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import
+
 chmod 644 /usr/share/keyrings/wazuh.gpg
+
 sudo vi /etc/apt/sources.list.d/wazuh.list
+
 #Add the following repository to the end of the file
 "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main"
+
 sudo apt-get update
 ```
 
