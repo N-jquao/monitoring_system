@@ -70,4 +70,50 @@ sudo chown wazuh:wazuh /var/ossec/etc/lists/blacklist-alienvault
 ```
 <br>
 
-7. 
+7. Configured the Active Response module to block the malicious IP address
+
+- Added a custom rule to trigger a wazuh active response script
+- Added this to the Wazuh server /var/ossec/etc/rules/local_rules.xml custom ruleset file
+
+```bash
+<group name="attack,">
+  <rule id="100100" level="10">
+    <if_group>web|attack|attacks</if_group>
+    <list field="srcip" lookup="address_match_key">etc/lists/blacklist-alienvault</list>
+    <description>IP address found in AlienVault reputation database.</description>
+  </rule>
+</group>
+```
+
+- Edited the Wazuh server /var/ossec/etc/ossec.conf configuration file and added the etc/lists/blacklist-alienvault list to the <ruleset> section
+
+<img width="433" height="334" alt="list" src="https://github.com/user-attachments/assets/076b1d3a-475d-4c69-8bac-fc57d3fe21ec" />
+
+<br>
+<br>
+
+8. Added the Active Response block to the Wazuh server /var/ossec/etc/ossec.conf file
+
+- For the Ubuntu endpoint, the firewall-drop command integrates with the Ubuntu local iptables firewall and drops incoming network connection from the attacker endpoint for 10 minutes (so you have time to investigate)
+
+<img width="400" height="194" alt="Screenshot 2026-02-11 102333" src="https://github.com/user-attachments/assets/beff77b0-7571-495c-8a13-2ec0c5382980" />
+
+```bash
+sudo systemctl restart wazuh-manager
+```
+
+<br>
+
+9. Attack emulation
+
+- I accessed the Ubuntu endpoint from the RHEL "attacker" vm
+
+```bash
+sudo curl http://<UBUNTU WEBSERVER_IP>
+```
+
+
+
+
+
+
