@@ -118,8 +118,13 @@ sudo curl http://<UBUNTU WEBSERVER_IP>
 - The RHEL-Attacker endpoint connected to the Ubuntu wazuh-agent's web server the first time
 - After the first connection, the Wazuh Active Response module temporarily blocked any successive connection to the web servers for 600 seconds (10 minutes, as I specified in the config file)
 
-
+- I went to the Wazuh dashboard and clicked on the "Threat Hunting" module
+- Then I added the following filter to the search bar to query the alerts for the Active Response module block --> rule.id:(651 OR 100100)
 <img width="944" height="418" alt="threat_hunting" src="https://github.com/user-attachments/assets/9038ba8c-19d0-43f5-820e-bc6fb620dfa5" />
+
+- When I try the curl command again on the RHEL-Attacker vm it hangs, whcih confirms the Active Reponse module block attempt worked. I will now have 10 minutes to investigate the attack and execute a security solution
+
+<img width="371" height="41" alt="image" src="https://github.com/user-attachments/assets/ff7cd474-b528-4a80-921a-ca25d769e4bf" />
 
 
 <br>
