@@ -34,6 +34,7 @@ sudo systemctl restart wazuh-agent
 
 <img width="369" height="81" alt="image" src="https://github.com/user-attachments/assets/2df14992-0061-4a3d-9880-d9fa6fc33f51" />
 <br>
+<br>
 
 - There was an alert under File Integrity Monitoring Events stating that the "regflag.txt" file was added to the /tmp directory
 <img width="951" height="451" alt="image" src="https://github.com/user-attachments/assets/3b1fb136-1ad9-4441-a29b-0fb03871ea78" />
