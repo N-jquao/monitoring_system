@@ -16,10 +16,9 @@ curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
 sudo bash ./wazuh-install.sh -a
 ```
 
-**This installed the Wazuh Indexer, Wazuh Server, and Wazuh Dashboard on the droplet server
-
-**I was then able to access the Wazuh web interface via **https://<WAZUH_DASHBOARD_IP_ADDRESS>** using the login details provided when the installation completed
-**I had to look in the Wazuh Dashboard config file for the IP address: **/etc/wazuh-dashboard/opensearch_dashboards.yml**
+- This installed the Wazuh Indexer, Wazuh Server, and Wazuh Dashboard on the droplet server
+- I was then able to access the Wazuh web interface via **https://<WAZUH_DASHBOARD_IP_ADDRESS>** using the login details provided when the installation completed
+- I had to look in the Wazuh Dashboard config file for the IP address: **/etc/wazuh-dashboard/opensearch_dashboards.yml**
 
 
 2. The next step was to deploy the Wazuh Agent on the endpoint I wanted to monitor
