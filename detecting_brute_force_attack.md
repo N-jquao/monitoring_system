@@ -29,10 +29,10 @@ sudo podman run --rm -it -v ~/hydra-wordlists:/wordlists:Z docker.io/kalilinux/k
 
 <br>
 
-
+<br>
 3. To visualize the attack I went to the Threat Hunting module on Wazuh dashboard and added these filters to query the alerts
 
-Linux - rule.id:(5551 OR 5712). Other related rules are 5710, 5711, 5716, 5720, 5503, 5504
+- Linux - rule.id:(5551 OR 5712). Other related rules are 5710, 5711, 5716, 5720, 5503, 5504
 
 <img width="953" height="455" alt="image" src="https://github.com/user-attachments/assets/2d66190e-d005-40a4-a160-f249225e7f89" />
 
