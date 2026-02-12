@@ -34,6 +34,8 @@ sudo curl -sSL https://get.docker.com/ | sh
 
 ```bash
 sudo vi /var/ossec/etc/ossec.conf
+
+sudo usermod -aG docker wazuh
 ```
 <br>
 
@@ -59,7 +61,28 @@ sudo docker run -d -P --name nginx_container nginx
 sudo docker exec -it nginx_container cat /etc/passwd
 
 sudo docker exec -it nginx_container /bin/bash
-  exit
+--> exit
 ```
+
+<br>
+
+- I stopped and removed the container
+
+<br>
+
+```bash
+sudo docker stop nginx_container
+
+sudo docker rm nginx_container
+
+sudo docker images
+```
+
+<br>
+
+6. I then visualized the alerts using Wazuh dashboard by going to docker module
+
+<br>
+
 
 
