@@ -22,11 +22,17 @@ sudo apt install -y hydra
 sudo hydra -l <username> -P <PASSWD_LIST.txt> <Ubuntu_IP> ssh
 
 #if running hydra on RHEL use this command
-sudo podman run --rm -it -v /home/admin:/wordlists:z vanhauser/hydra   hydra -l admin -P /wordlists/passlist.txt 192.168.102.163 ssh
+sudo podman run --rm -it -v ~/hydra-wordlists:/wordlists:Z docker.io/kalilinux/kali-rolling   bash -c "apt update && apt install -y hydra && hydra -l admin -P /wordlists/passlist.txt 192.168.102.163 ssh"
 ```
 
+<img width="837" height="98" alt="image" src="https://github.com/user-attachments/assets/85011983-be74-409f-8b3c-f93fb5140e12" />
+
 <br>
+
 
 3. To visualize the attack I went to the Threat Hunting module on Wazuh dashboard and added these filters to query the alerts
 
 Linux - rule.id:(5551 OR 5712). Other related rules are 5710, 5711, 5716, 5720, 5503, 5504
+
+<img width="953" height="455" alt="image" src="https://github.com/user-attachments/assets/2d66190e-d005-40a4-a160-f249225e7f89" />
+
