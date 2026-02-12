@@ -19,7 +19,7 @@ sudo apt install -y hydra
 - I ran Hydra from the attacker endpoint to execute brute-force attacks against the RHEL endpoint
 
 ```bash
-sudo hydra -l <username> -P <PASSWD_LIST.txt> <RHEL_IP> ssh
+sudo hydra -l <username> -P <PASSWD_LIST.txt> <Ubuntu_IP> ssh
 ```
 
 <br>
