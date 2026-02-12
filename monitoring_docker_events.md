@@ -84,5 +84,6 @@ sudo docker images
 
 <br>
 
+<img width="940" height="494" alt="image" src="https://github.com/user-attachments/assets/69cec747-f94c-4ff8-9e2d-768e6249c375" />
 
 
