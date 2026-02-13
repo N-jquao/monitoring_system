@@ -25,33 +25,14 @@
   Process information
   System logs
 
+<br>
 
-```bash
-# Install Docker if not already installed
-sudo apt update
+5. I then went through the installation process by clicking Add data --> infrastructure --> hosts
 
-sudo apt install -y docker.io
+<br>
 
-sudo systemctl start docker
+6. After installation I had some alerts showing immediately
 
-sudo systemctl enable docker
+<br>
 
-# Add your user to docker group
-sudo usermod -aG docker $USER
-
-newgrp docker
-
-# Run SolarWinds collector as Docker container
-docker run -d \
-  --name solarwinds-collector \
-  --restart unless-stopped \
-  --hostname $(hostname) \
-  -v /etc/solarwinds/otel-config.yaml:/etc/otelcol-contrib/config.yaml:ro \
-  -v /sys:/hostfs/sys:ro \
-  -v /proc:/hostfs/proc:ro \
-  -v /etc:/hostfs/etc:ro \
-  --pid host \
-  --network host \
-  otel/opentelemetry-collector-contrib:latest \
-  --config=/etc/otelcol-contrib/config.yaml
-```
+<img width="852" height="497" alt="image" src="https://github.com/user-attachments/assets/dcec44cb-3203-45fb-8117-f099ad9cf632" />
