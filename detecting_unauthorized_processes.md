@@ -64,6 +64,11 @@ sudo systemctl restart wazuh-manager
 
 <br>
 
-5. I then visualized this on Wazuh dashboard using rule.id:(100051) in Threat Hunting module
+```bash
+sudo nc -l 8000
+```
+
+<br>
+5. I then visualized this on Wazuh dashboard using **rule.id:(100051)** in Threat Hunting module
 
 <br>
