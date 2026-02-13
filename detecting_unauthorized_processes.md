@@ -72,5 +72,6 @@ sudo nc -l 8000
 5. I then visualized this on Wazuh dashboard using **rule.id:(100051)** in Threat Hunting module
 
 <br>
+<br>
 
 <img width="950" height="488" alt="image" src="https://github.com/user-attachments/assets/a9c82a16-65e0-483b-84e8-0c1d1f8a1dac" />
